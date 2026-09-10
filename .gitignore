@@ -1,0 +1,25 @@
+.DS_Store
+.env
+.idea/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.vscode/
+__pycache__/
+*.egg-info/
+*.py[cod]
+build/
+dist/
+htmlcov/
+
+# Generated restoration artifacts
+output/
+outputs/
+*_diag.json
+*_diag_board.png
+*_restored.json
+*_restored.png
+*_scaleheat.png
+*_trace.xml
+*_verify.json
+*_verify_board.png

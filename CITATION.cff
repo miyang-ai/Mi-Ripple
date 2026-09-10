@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use MIRAGE, please cite the software and accompanying paper."
+title: "MIRAGE: Digital Ripple Restoration"
+type: software
+version: 0.1.0
+date-released: 2026-09-10
+license: MIT
+repository-code: "https://github.com/miyang-ai/digital-ripple-restoration"
+authors:
+  - family-names: Xu
+    given-names: Yicheng
+  - family-names: Chen
+    given-names: Jiayin
+  - family-names: Wang
+    given-names: Muting
+preferred-citation:
+  type: article
+  title: "MIRAGE: Restoring Images Degraded by Iterative AI Editing"
+  year: 2026
+  authors:
+    - family-names: Xu
+      given-names: Yicheng
+    - family-names: Chen
+      given-names: Jiayin
+    - family-names: Wang
+      given-names: Muting
