@@ -20,28 +20,23 @@
 
 \begin{document}
 \title[MIRAGE: Restoring Images Degraded by Iterative AI Editing]{MIRAGE: Restoring Images Degraded by Iterative AI Editing}
-\author{Yicheng Xu}
-\affiliation{\institution{MIYANG Technology (Shanghai) Co., Ltd.}\city{Shanghai}\country{China}}
-\author{Jiayin Chen}
-\affiliation{\institution{MIYANG Technology (Shanghai) Co., Ltd.}\city{Shanghai}\country{China}}
-\author{Muting Wang}
-\affiliation{\institution{MIYANG Technology (Shanghai) Co., Ltd.}\city{Shanghai}\country{China}}
-\renewcommand{\shortauthors}{Xu, Chen, and Wang}
+\author{Jiayin Chen\textsuperscript{2,1,3,4}, Yicheng Xu\textsuperscript{1,5}, Muting Wang\textsuperscript{1,6}}
+\affiliation{\institution{\textsuperscript{1} Miyang Technology (Shanghai) Co., Ltd., Shanghai, China; \textsuperscript{2} Key Laboratory of System Software (Chinese Academy of Sciences), Beijing, China; \textsuperscript{3} Institute of Software, Chinese Academy of Sciences, Beijing, China; \textsuperscript{4} University of Chinese Academy of Sciences, Beijing, China; \textsuperscript{5} Shanghai Jiao Tong University, Shanghai, China; \textsuperscript{6} Tianjin University, Tianjin, China}}
 
 \begin{abstract}
 Iterative reference-conditioned image editing can introduce grid-like and granular textures, commonly described as digital ripple.
-We present MIRAGE, a diagnosis-guided restoration workflow that suppresses this digital ripple while protecting image structure.
-MIRAGE separates periodic lattice artifacts from content-entangled granular texture, then combines selective spectral notching,
-structure-aware smoothing, and cleaned-reference regeneration.
-This separation enables low-distortion filtering when artifacts are spectrally isolated and visual reconstruction when filtering would erase legitimate detail.
-Across fourteen notch-only executions, whole-image residual standard deviation is 0.08--0.44 in CIELAB lightness units.
-In a paired regeneration example, reference cleaning reduces output debris density by 45\%.
+We present MIRAGE, a diagnosis-guided restoration workflow that suppresses this digital ripple while protecting image structure. 
+MIRAGE separates periodic lattice artifacts from content-entangled granular texture, then combines selective spectral notching, 
+structure-aware smoothing, and cleaned-reference regeneration. 
+This separation enables low-distortion filtering when artifacts are spectrally isolated and visual reconstruction when filtering would erase legitimate detail. 
+Across fourteen notch-only executions, whole-image residual standard deviation is 0.08--0.44 in CIELAB lightness units. 
+In a paired regeneration example, reference cleaning reduces output debris density by 45\%. 
 MIRAGE links measurable artifact reduction to visibly cleaner generated images, rather than optimizing a spectral score alone.
 \end{abstract}
 \keywords{image restoration, iterative reference-conditioned image editing, structure-aware filtering}
 \begin{teaserfigure}
   \centering
-  \includegraphics[width=\textwidth]{figures/teaser_restoration_en.pdf}
+  \includegraphics[width=\textwidth]{./figures/teaser_restoration_en.pdf}
   \caption{Restoring GPT-image-2.5 gen4 outputs with reference cleaning, one regeneration per scene, and final notching. Normalized scale-tile percentages decrease from 25.3\% to 11.1\% in moss gorge (H), 41.1\% to 12.1\% in wisteria tunnel (W), and 20.0\% to 0.0\% in ice cave (K).}
   \Description{Full-frame and relative-location crop pairs compare GPT-image-2.5 moss gorge, wisteria tunnel, and ice-cave endpoints with complete restoration outputs. Scale coverage falls but remains structured in moss and wisteria, and reaches zero in the ice cave. Regeneration changes scene details.}
   \label{fig:teaser}
@@ -49,9 +44,9 @@ MIRAGE links measurable artifact reduction to visibly cleaner generated images, 
 \maketitle
 
 \section{Introduction}
-Iterative reference-conditioned image editing uses an existing image and a text instruction to preserve visual identity while modifying a scene.
-Reusing each output as the next reference makes incremental editing convenient, but can also propagate unwanted texture.
-At native resolution, affected images exhibit grids, honeycomb-like patterns, or granular surfaces that are inconspicuous in thumbnails.
+Iterative reference-conditioned image editing uses an existing image and a text instruction to preserve visual identity while modifying a scene. 
+Reusing each output as the next reference makes incremental editing convenient, but can also propagate unwanted texture. 
+At native resolution, affected images exhibit grids, honeycomb-like patterns, or granular surfaces that are inconspicuous in thumbnails. 
 We use \emph{digital ripple} as an umbrella term for these structured artifacts.
 
 Prior work has shown that generated images can exhibit systematic frequency-domain discrepancies, with several studies linking these patterns to upsampling, aliasing, and related sampling effects~\cite{durall,dzanic,frank,odena,karras}. This line of research has mainly focused on detecting synthetic images or explaining artifact formation at the architectural level. Repeated reference-conditioned editing raises a more practical restoration problem: whether a visible artifact is spectrally separable and can be removed without harming legitimate detail, or whether it is entangled with scene content and therefore requires intervention in the generation workflow. Studies of repeated image replication, including Banana100, further show that recursive degradation challenges no-reference quality assessment~\cite{banana100}. These findings motivate a treatment-oriented analysis that distinguishes removable spectral contamination from content-entangled degradation.
@@ -94,7 +89,7 @@ The nominal 3--8-pixel band isolates diagnostic texture but also imposes a size 
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/ripple_forms_en.pdf}
+  \includegraphics[width=\linewidth]{./figures/ripple_forms_en.pdf}
   \caption{Native crops and difference-of-Gaussians (DoG) views of a lattice-positive candidate and a granular region.}
   \Description{Two native crops and their amplified difference-of-Gaussians views illustrate fine texture in a lattice-positive candidate and a granular region. Filter widths and display gains are labeled.}
   \label{fig:forms}
@@ -120,9 +115,9 @@ Rule-based routing is the default implementation. An optional language-model lay
 \section{Experimental Setup}
 \label{sec:methods}
 \subsection{Data and Editing Protocol}
-The study uses two commercial editing channels without access to weights, seeds, or sampling parameters.
-Channel A is a desktop integration advertised as OpenAI Image 2.
-Channel B is an OpenAI-compatible gateway including routes identified as gpt-image-2 and gpt-image-2.5.
+The study uses two commercial editing channels without access to weights, seeds, or sampling parameters. 
+Channel A is a desktop integration advertised as OpenAI Image 2. 
+Channel B is an OpenAI-compatible gateway including routes identified as gpt-image-2 and gpt-image-2.5. 
 We treat these as sampled access conditions rather than independently replicated models or a vendor ranking.
 
 Our experiments comprise five five-generation same-scene chains on Channel B, two five-generation scene-change chains on Channel A, prompt comparisons on two foliage-rich scenes, and an eight-scene comparison of the gpt-image-2 and gpt-image-2.5 routes. Each chain contains an initial output, gen0, and four edits, gen1--gen4. Same-scene chains reuse the previous output with an unchanged prompt. Additional material includes four photographs, five web references, fifteen generated images for a spectral survey, four fixed-condition repeats, and six watercolour portrait originals for the pipeline case series.
@@ -139,7 +134,7 @@ The restoration examples show how treatment selection addresses visible grain, f
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/restoration_en.pdf}
+\includegraphics[width=\linewidth]{./figures/restoration_en.pdf}
 \caption{GPT-image-2.5 gen4 face close-up and the MIRAGE output. The comparison illustrates the visual change after reference cleaning, regeneration and final notching.}
 \Description{Two native 1280 by 720 face close-up images are stacked vertically. The top is a GPT-image-2.5 gen4 input and the bottom is the MIRAGE output after processing. No separate enlarged crop is shown.}
 \label{fig:restoration}
@@ -152,7 +147,7 @@ Selective notching removes isolated lattice peaks while avoiding the broad tonal
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/notch_comparison_en.pdf}
+\includegraphics[width=\linewidth]{./figures/notch_comparison_en.pdf}
 \caption{Input windows, selective notch outputs and radial soft-clipping outputs for matched skin, eyes and foliage regions.}
 \Description{Three columns compare input, notch and soft-clipping outputs across skin, eyes and foliage rows.}
 \label{fig:notch}
@@ -160,7 +155,7 @@ Selective notching removes isolated lattice peaks while avoiding the broad tonal
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/notch_residuals_en.pdf}
+\includegraphics[width=\linewidth]{./figures/notch_residuals_en.pdf}
 \caption{Amplified signed residuals for selective notching and radial soft clipping on the matched regions. Gray denotes zero change; residuals are shown with six-fold amplification.}
 \Description{Two columns show amplified signed residuals for notch and soft-clipping treatments across skin, eyes and foliage rows.}
 \label{fig:notch-residuals}
@@ -232,7 +227,7 @@ The workflow restores images through three linked decisions: diagnose the artifa
 Channel B is operated by the authors' institution. The experiments concern artifact measurements rather than overall channel rankings. Generated outputs remain identified as AI-generated; filtering is intended for quality control on the authors' assets, not concealment of provenance. Third-party material retains its original attribution and license.
 
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{references}
+\bibliography{references.bib}
 
 \ifincludeappendix
 \clearpage
@@ -461,7 +456,7 @@ The implementation separates image I/O, diagnosis, scale indexing, notching, mas
 
 The archived report records nineteen passing synthetic and protocol tests. Those tests cover known lattice and granule inputs, clean gradients, the no-flat-window case, distortion limits, and regeneration through a mock client. They are software checks, not independent validation of detector accuracy. One integrated attempt encountered HTTP 503 and stopped without delivery. Archived executions also complete regeneration rounds for moss, rainforest and ice cave. Their records contain source/output hashes and the actions reference cleaning, regeneration, notching, and successful verification. These three qualitative cases are additional to the fourteen notch-only executions; the ice-cave case is not part of the five-chain trajectory experiment. Regeneration changes content and can return a different canvas; the final aligned check measures subsequent filtering damage, not fidelity to the original degraded image.
 
-Measurement and processing modules are supplied in the repository's \texttt{src/mirage} package. They cover diagnosis, scale indexing, notching, spatial suppression, reference cleaning, regeneration, and verification. MIYANG's internal evidence archive retains experiment records, prompts, sidecars, and traces; the public repository includes the manuscript figures and synthetic protocol tests rather than the complete production archive.
+Measurement and processing modules are supplied in the repository's visual-canon scripts directory. They cover diagnosis, scale indexing, notching, spatial suppression, reference cleaning, regeneration, and verification. The figure process archive retains experiment records, prompts, sidecars, and traces; figure provenance files identify the corresponding source paths. The online-compilation package includes the manuscript figures rather than the complete experimental archive.
 
 All experimental images are existing generated outputs or attributed third-party material. New conference-layout figures rearrange authentic evidence panels and replace annotations with English; they do not synthesize experimental content. Source-panel provenance is retained alongside the figure-generation script. A final submission should supply an appropriately anonymized artifact link if required by the venue.
 \fi
