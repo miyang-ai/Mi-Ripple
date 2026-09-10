@@ -27,6 +27,10 @@ reference-conditioned AI image editing.
 
 [Try MIRAGE on the MIYANG Lab website →](https://lab.miyang.cn/ripple/)
 
+[Experience MIRAGE with Alice →](https://alice.miyang.cn/)
+
+[Visit the MIYANG official website →](https://miyang.cn/)
+
 MIRAGE does not apply one aggressive filter to every image. It first separates:
 
 - **Periodic lattice artifacts**: isolated spectral peaks that can be selectively
