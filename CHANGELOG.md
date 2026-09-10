@@ -11,3 +11,4 @@ All notable changes to this project will be documented here.
 - Added reference-only cleaning and optional MIYANG regeneration.
 - Added deterministic orchestration, rollback, sidecars, and XML traces.
 - Added synthetic regression tests and cross-platform CI.
+- Added an Agent Skills-compatible workflow for end-to-end AI execution.

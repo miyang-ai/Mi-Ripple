@@ -6,4 +6,5 @@ include TRADEMARKS.md
 include CITATION.cff
 recursive-include docs *.md
 recursive-include paper *.md
+recursive-include skills *.md
 recursive-include tests *.py

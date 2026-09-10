@@ -1,4 +1,4 @@
-# Digital Ripple Restoration
+# MIRAGE
 
 Reference implementation of **MIRAGE**, MIYANG's diagnosis-guided workflow for
 restoring grid-like and scale-like artifacts introduced by iterative,
@@ -24,8 +24,8 @@ MIRAGE does not apply one aggressive filter to every image. It first separates:
 Python 3.11 or newer is required.
 
 ```bash
-git clone https://github.com/miyang-ai/digital-ripple-restoration.git
-cd digital-ripple-restoration
+git clone https://github.com/miyang-ai/mirage.git
+cd mirage
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
@@ -109,6 +109,22 @@ record is available.
 
 The repository intentionally ships synthetic, deterministic test inputs rather
 than private user images or internal production assets.
+
+## Agent Skill
+
+This repository includes an Agent Skills-compatible workflow at
+[`skills/mirage/SKILL.md`](skills/mirage/SKILL.md). It teaches an AI coding agent
+to install the package, process a user-provided image, inspect the generated
+boards, request permission before regeneration, and return the actual result.
+
+Install the `mirage` skill with an Agent Skills-compatible client by pointing it
+at:
+
+```text
+https://github.com/miyang-ai/mirage
+```
+
+The skill never authorizes paid regeneration on the user's behalf.
 
 ## Brand and license
 

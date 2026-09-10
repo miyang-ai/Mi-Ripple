@@ -5,7 +5,7 @@ type: software
 version: 0.1.0
 date-released: 2026-09-10
 license: MIT
-repository-code: "https://github.com/miyang-ai/digital-ripple-restoration"
+repository-code: "https://github.com/miyang-ai/mirage"
 authors:
   - family-names: Xu
     given-names: Yicheng
