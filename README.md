@@ -4,6 +4,8 @@ Reference implementation of **MIRAGE**, MIYANG's diagnosis-guided workflow for
 restoring grid-like and scale-like artifacts introduced by iterative,
 reference-conditioned AI image editing.
 
+[Try MIRAGE on the MIYANG Lab website →](https://lab.miyang.cn/ripple/)
+
 MIRAGE does not apply one aggressive filter to every image. It first separates:
 
 - **Periodic lattice artifacts**: isolated spectral peaks that can be selectively
@@ -18,6 +20,21 @@ MIRAGE does not apply one aggressive filter to every image. It first separates:
 > This is a research implementation, not a universal artifact detector. Automatic
 > scores are triage signals. Review the generated heat maps and comparison boards
 > before accepting an output.
+
+## Before / after
+
+This is the same Image 2.5 night-hair comparison used by the
+[MIYANG Lab tool](https://lab.miyang.cn/ripple/). Open the original files to
+inspect the hair texture at native resolution.
+
+| Before | After |
+| --- | --- |
+| [![Before restoration](assets/comparison/night-hair-before.jpg)](assets/comparison/night-hair-before.jpg) | [![After restoration](assets/comparison/night-hair-after.jpg)](assets/comparison/night-hair-after.jpg) |
+
+The images share the same source composition but come from separate experimental
+branches: direct regeneration versus cleaned-reference regeneration followed by
+selective lattice notching. Regeneration is not pixel-aligned restoration and can
+change fine semantic details.
 
 ## Installation
 
@@ -100,6 +117,23 @@ The accompanying paper is:
 > Degraded by Iterative AI Editing.** MIYANG Technology (Shanghai) Co., Ltd.,
 > 2026.
 
+The [LaTeX manuscript](paper/manuscript.tex), [references](paper/references.bib),
+and publication figures are included in [`paper/`](paper/).
+
+### Paper figures
+
+![Restoration results across moss gorge, wisteria tunnel, and ice cave](paper/figures/teaser_restoration_en.png)
+
+| Artifact forms | Targeted restoration |
+| --- | --- |
+| [![Periodic lattice and granular artifact forms](paper/figures/ripple_forms_en.png)](paper/figures/ripple_forms_en.pdf) | [![Before and after facial restoration](paper/figures/restoration_en.png)](paper/figures/restoration_en.pdf) |
+
+#### Selective notch versus broad spectral suppression
+
+[![Input, selective notch, and soft-clipping comparison](paper/figures/notch_comparison_en.png)](paper/figures/notch_comparison_en.pdf)
+
+[![Residual comparison for selective notch and soft clipping](paper/figures/notch_residuals_en.png)](paper/figures/notch_residuals_en.pdf)
+
 See [docs/ALGORITHM.md](docs/ALGORITHM.md) for the decision flow and
 [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before interpreting reported scores.
 Provider integration and billing boundaries are documented in
@@ -107,8 +141,9 @@ Provider integration and billing boundaries are documented in
 The publication-ready manuscript will be linked here when its permanent public
 record is available.
 
-The repository intentionally ships synthetic, deterministic test inputs rather
-than private user images or internal production assets.
+The test suite uses synthetic deterministic inputs. The documented comparison and
+paper figures are curated publication assets; private user images and internal
+production archives are not included.
 
 ## Agent Skill
 
@@ -125,6 +160,10 @@ https://github.com/miyang-ai/mirage
 ```
 
 The skill never authorizes paid regeneration on the user's behalf.
+
+## Contributors
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ## Brand and license
 

@@ -1,10 +1,12 @@
 include CHANGELOG.md
 include CODE_OF_CONDUCT.md
 include CONTRIBUTING.md
+include CONTRIBUTORS.md
 include SECURITY.md
 include TRADEMARKS.md
 include CITATION.cff
+recursive-include assets *.md
 recursive-include docs *.md
-recursive-include paper *.md
+recursive-include paper *.md *.tex *.bib
 recursive-include skills *.md
 recursive-include tests *.py
