@@ -1,5 +1,26 @@
 # MIRAGE
 
+## AI Skill — start here
+
+**[Open `skills/mirage/SKILL.md` →](https://github.com/miyang-ai/mirage/blob/main/skills/mirage/SKILL.md)**
+
+AI coding agents should read this skill first. It contains the complete workflow
+for installing MIRAGE, processing an image, inspecting the generated evidence,
+requesting permission before paid regeneration, and returning the actual result.
+The skill never authorizes paid regeneration on the user's behalf.
+
+Install it from the canonical repository:
+
+```text
+https://github.com/miyang-ai/mirage
+```
+
+Direct skill URL:
+
+```text
+https://raw.githubusercontent.com/miyang-ai/mirage/main/skills/mirage/SKILL.md
+```
+
 Reference implementation of **MIRAGE**, MIYANG's diagnosis-guided workflow for
 restoring grid-like and scale-like artifacts introduced by iterative,
 reference-conditioned AI image editing.
@@ -23,18 +44,44 @@ MIRAGE does not apply one aggressive filter to every image. It first separates:
 
 ## Before / after
 
-This is the same Image 2.5 night-hair comparison used by the
-[MIYANG Lab tool](https://lab.miyang.cn/ripple/). Open the original files to
-inspect the hair texture at native resolution.
+These are the five comparisons currently used by the
+[MIYANG Lab tool](https://lab.miyang.cn/ripple/). Open an image to inspect it at
+native resolution.
+
+### Night hair · Image 2.5
 
 | Before | After |
 | --- | --- |
-| [![Before restoration](assets/comparison/night-hair-before.jpg)](assets/comparison/night-hair-before.jpg) | [![After restoration](assets/comparison/night-hair-after.jpg)](assets/comparison/night-hair-after.jpg) |
+| [![Night hair before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/night-hair-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/night-hair-before.jpg) | [![Night hair after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/night-hair-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/night-hair-after.jpg) |
 
 The images share the same source composition but come from separate experimental
 branches: direct regeneration versus cleaned-reference regeneration followed by
 selective lattice notching. Regeneration is not pixel-aligned restoration and can
 change fine semantic details.
+
+### Moss gorge · Image 2.5
+
+| Before | After |
+| --- | --- |
+| [![Moss gorge Image 2.5 before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image25-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image25-before.jpg) | [![Moss gorge Image 2.5 after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image25-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image25-after.jpg) |
+
+### Moss gorge · Image 2.0
+
+| Before | After |
+| --- | --- |
+| [![Moss gorge Image 2.0 before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image2-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image2-before.jpg) | [![Moss gorge Image 2.0 after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image2-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image2-after.jpg) |
+
+### Rainforest path · Image 2.0
+
+| Before | After |
+| --- | --- |
+| [![Rainforest path before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/rainforest-path-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/rainforest-path-before.jpg) | [![Rainforest path after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/rainforest-path-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/rainforest-path-after.jpg) |
+
+### Ice cave · Image 2.0
+
+| Before | After |
+| --- | --- |
+| [![Ice cave before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/ice-cave-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/ice-cave-before.jpg) | [![Ice cave after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/ice-cave-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/ice-cave-after.jpg) |
 
 ## Installation
 
@@ -122,17 +169,17 @@ and publication figures are included in [`paper/`](paper/).
 
 ### Paper figures
 
-![Restoration results across moss gorge, wisteria tunnel, and ice cave](paper/figures/teaser_restoration_en.png)
+[![Restoration results across moss gorge, wisteria tunnel, and ice cave](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/teaser_restoration_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/teaser_restoration_en.pdf)
 
 | Artifact forms | Targeted restoration |
 | --- | --- |
-| [![Periodic lattice and granular artifact forms](paper/figures/ripple_forms_en.png)](paper/figures/ripple_forms_en.pdf) | [![Before and after facial restoration](paper/figures/restoration_en.png)](paper/figures/restoration_en.pdf) |
+| [![Periodic lattice and granular artifact forms](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/ripple_forms_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/ripple_forms_en.pdf) | [![Before and after facial restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/restoration_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/restoration_en.pdf) |
 
 #### Selective notch versus broad spectral suppression
 
-[![Input, selective notch, and soft-clipping comparison](paper/figures/notch_comparison_en.png)](paper/figures/notch_comparison_en.pdf)
+[![Input, selective notch, and soft-clipping comparison](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/notch_comparison_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/notch_comparison_en.pdf)
 
-[![Residual comparison for selective notch and soft clipping](paper/figures/notch_residuals_en.png)](paper/figures/notch_residuals_en.pdf)
+[![Residual comparison for selective notch and soft clipping](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/notch_residuals_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/notch_residuals_en.pdf)
 
 See [docs/ALGORITHM.md](docs/ALGORITHM.md) for the decision flow and
 [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before interpreting reported scores.
@@ -144,22 +191,6 @@ record is available.
 The test suite uses synthetic deterministic inputs. The documented comparison and
 paper figures are curated publication assets; private user images and internal
 production archives are not included.
-
-## Agent Skill
-
-This repository includes an Agent Skills-compatible workflow at
-[`skills/mirage/SKILL.md`](skills/mirage/SKILL.md). It teaches an AI coding agent
-to install the package, process a user-provided image, inspect the generated
-boards, request permission before regeneration, and return the actual result.
-
-Install the `mirage` skill with an Agent Skills-compatible client by pointing it
-at:
-
-```text
-https://github.com/miyang-ai/mirage
-```
-
-The skill never authorizes paid regeneration on the user's behalf.
 
 ## Contributors
 
