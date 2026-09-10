@@ -2,7 +2,7 @@
 
 ## AI Skill — start here
 
-**[Open `skills/mirage/SKILL.md` →](https://github.com/miyang-ai/mirage/blob/main/skills/mirage/SKILL.md)**
+**[Open `skills/mirage/SKILL.md` →](https://github.com/miyang-ai/Mi-Ripple/blob/main/skills/mirage/SKILL.md)**
 
 AI coding agents should read this skill first. It contains the complete workflow
 for installing MIRAGE, processing an image, inspecting the generated evidence,
@@ -12,13 +12,13 @@ The skill never authorizes paid regeneration on the user's behalf.
 Install it from the canonical repository:
 
 ```text
-https://github.com/miyang-ai/mirage
+https://github.com/miyang-ai/Mi-Ripple
 ```
 
 Direct skill URL:
 
 ```text
-https://raw.githubusercontent.com/miyang-ai/mirage/main/skills/mirage/SKILL.md
+https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/skills/mirage/SKILL.md
 ```
 
 Reference implementation of **MIRAGE**, MIYANG's diagnosis-guided workflow for
@@ -56,7 +56,7 @@ native resolution.
 
 | Before | After |
 | --- | --- |
-| [![Night hair before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/night-hair-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/night-hair-before.jpg) | [![Night hair after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/night-hair-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/night-hair-after.jpg) |
+| [![Night hair before restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/night-hair-before.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/night-hair-before.jpg) | [![Night hair after restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/night-hair-after.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/night-hair-after.jpg) |
 
 The images share the same source composition but come from separate experimental
 branches: direct regeneration versus cleaned-reference regeneration followed by
@@ -67,32 +67,32 @@ change fine semantic details.
 
 | Before | After |
 | --- | --- |
-| [![Moss gorge Image 2.5 before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image25-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image25-before.jpg) | [![Moss gorge Image 2.5 after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image25-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image25-after.jpg) |
+| [![Moss gorge Image 2.5 before restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/moss-gorge-image25-before.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/moss-gorge-image25-before.jpg) | [![Moss gorge Image 2.5 after restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/moss-gorge-image25-after.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/moss-gorge-image25-after.jpg) |
 
 ### Moss gorge · Image 2.0
 
 | Before | After |
 | --- | --- |
-| [![Moss gorge Image 2.0 before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image2-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image2-before.jpg) | [![Moss gorge Image 2.0 after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/moss-gorge-image2-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/moss-gorge-image2-after.jpg) |
+| [![Moss gorge Image 2.0 before restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/moss-gorge-image2-before.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/moss-gorge-image2-before.jpg) | [![Moss gorge Image 2.0 after restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/moss-gorge-image2-after.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/moss-gorge-image2-after.jpg) |
 
 ### Rainforest path · Image 2.0
 
 | Before | After |
 | --- | --- |
-| [![Rainforest path before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/rainforest-path-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/rainforest-path-before.jpg) | [![Rainforest path after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/rainforest-path-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/rainforest-path-after.jpg) |
+| [![Rainforest path before restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/rainforest-path-before.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/rainforest-path-before.jpg) | [![Rainforest path after restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/rainforest-path-after.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/rainforest-path-after.jpg) |
 
 ### Ice cave · Image 2.0
 
 | Before | After |
 | --- | --- |
-| [![Ice cave before restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/ice-cave-before.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/ice-cave-before.jpg) | [![Ice cave after restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/assets/comparison/ice-cave-after.jpg)](https://github.com/miyang-ai/mirage/blob/main/assets/comparison/ice-cave-after.jpg) |
+| [![Ice cave before restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/ice-cave-before.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/ice-cave-before.jpg) | [![Ice cave after restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/assets/comparison/ice-cave-after.jpg)](https://github.com/miyang-ai/Mi-Ripple/blob/main/assets/comparison/ice-cave-after.jpg) |
 
 ## Installation
 
 Python 3.11 or newer is required.
 
 ```bash
-git clone https://github.com/miyang-ai/mirage.git
+git clone https://github.com/miyang-ai/Mi-Ripple.git
 cd mirage
 python -m venv .venv
 source .venv/bin/activate
@@ -173,17 +173,17 @@ and publication figures are included in [`paper/`](paper/).
 
 ### Paper figures
 
-[![Restoration results across moss gorge, wisteria tunnel, and ice cave](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/teaser_restoration_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/teaser_restoration_en.pdf)
+[![Restoration results across moss gorge, wisteria tunnel, and ice cave](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/paper/figures/teaser_restoration_en.png)](https://github.com/miyang-ai/Mi-Ripple/blob/main/paper/figures/teaser_restoration_en.pdf)
 
 | Artifact forms | Targeted restoration |
 | --- | --- |
-| [![Periodic lattice and granular artifact forms](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/ripple_forms_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/ripple_forms_en.pdf) | [![Before and after facial restoration](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/restoration_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/restoration_en.pdf) |
+| [![Periodic lattice and granular artifact forms](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/paper/figures/ripple_forms_en.png)](https://github.com/miyang-ai/Mi-Ripple/blob/main/paper/figures/ripple_forms_en.pdf) | [![Before and after facial restoration](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/paper/figures/restoration_en.png)](https://github.com/miyang-ai/Mi-Ripple/blob/main/paper/figures/restoration_en.pdf) |
 
 #### Selective notch versus broad spectral suppression
 
-[![Input, selective notch, and soft-clipping comparison](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/notch_comparison_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/notch_comparison_en.pdf)
+[![Input, selective notch, and soft-clipping comparison](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/paper/figures/notch_comparison_en.png)](https://github.com/miyang-ai/Mi-Ripple/blob/main/paper/figures/notch_comparison_en.pdf)
 
-[![Residual comparison for selective notch and soft clipping](https://raw.githubusercontent.com/miyang-ai/mirage/main/paper/figures/notch_residuals_en.png)](https://github.com/miyang-ai/mirage/blob/main/paper/figures/notch_residuals_en.pdf)
+[![Residual comparison for selective notch and soft clipping](https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/paper/figures/notch_residuals_en.png)](https://github.com/miyang-ai/Mi-Ripple/blob/main/paper/figures/notch_residuals_en.pdf)
 
 See [docs/ALGORITHM.md](docs/ALGORITHM.md) for the decision flow and
 [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before interpreting reported scores.

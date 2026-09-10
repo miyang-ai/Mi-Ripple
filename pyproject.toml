@@ -52,9 +52,9 @@ mirage = "mirage.pipeline:main"
 mirage-diagnose = "mirage.diagnosis:main"
 
 [project.urls]
-Homepage = "https://github.com/miyang-ai/mirage"
-Issues = "https://github.com/miyang-ai/mirage/issues"
-Paper = "https://github.com/miyang-ai/mirage/tree/main/paper"
+Homepage = "https://github.com/miyang-ai/Mi-Ripple"
+Issues = "https://github.com/miyang-ai/Mi-Ripple/issues"
+Paper = "https://github.com/miyang-ai/Mi-Ripple/tree/main/paper"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -6,7 +6,7 @@ compatibility: Requires Python 3.11+, local file access, and permission to run s
 metadata:
   author: MIYANG
   version: "0.1.0"
-  repository: "https://github.com/miyang-ai/mirage"
+  repository: "https://github.com/miyang-ai/Mi-Ripple"
 ---
 
 # Restore digital-ripple artifacts
@@ -59,7 +59,7 @@ Otherwise install from the canonical repository into an isolated environment:
 ```bash
 python3 -m venv .mirage-venv
 .mirage-venv/bin/python -m pip install \
-  "git+https://github.com/miyang-ai/mirage.git"
+  "git+https://github.com/miyang-ai/Mi-Ripple.git"
 ```
 
 Use the corresponding environment's `mirage` executable for subsequent steps.
