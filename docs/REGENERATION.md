@@ -2,13 +2,13 @@
 
 The deterministic local route requires no API key or network access.
 
-When diagnosed artifacts overlap legitimate content, MIRAGE stops for human
+When diagnosed artifacts overlap legitimate content, Mi-Ripple stops for human
 review by default. Passing `--allow-regen` permits a bounded attempt using a
 cleaned `reference_only` image:
 
 ```bash
 export MIYANG_API_KEY=...
-mirage input.png output/ --allow-regen --max-regen 1
+mi-ripple input.png output/ --allow-regen --max-regen 1
 ```
 
 Optional environment variables:
@@ -16,7 +16,7 @@ Optional environment variables:
 - `MIYANG_BASE_URL`: API base URL; defaults to `https://miyang.cn/api/v1`.
 - `MIYANG_PROXY`: explicit fallback proxy used only after a connection-establishment
   failure. Environment proxy variables are otherwise ignored.
-- `MIRAGE_WORKERS`: worker count for deterministic spectral median filtering.
+- `MI_RIPPLE_WORKERS`: worker count for deterministic spectral median filtering.
 
 The `RegenClient` protocol can be implemented by another provider without
 changing diagnosis or treatment logic:
@@ -28,7 +28,7 @@ class MyClient:
         ...
 ```
 
-Pass the client to `mirage.pipeline.run(..., allow_regen=True, client=client)`.
+Pass the client to `mi_ripple.pipeline.run(..., allow_regen=True, client=client)`.
 
 ## Safety boundaries
 

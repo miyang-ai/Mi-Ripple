@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "miyang-mirage"
+name = "mi-ripple"
 version = "0.1.0"
 description = "Diagnosis-guided restoration of digital ripple artifacts in iteratively edited AI images"
 readme = "README.md"
@@ -48,8 +48,8 @@ dev = [
 ]
 
 [project.scripts]
-mirage = "mirage.pipeline:main"
-mirage-diagnose = "mirage.diagnosis:main"
+mi-ripple = "mi_ripple.pipeline:main"
+mi-ripple-diagnose = "mi_ripple.diagnosis:main"
 
 [project.urls]
 Homepage = "https://github.com/miyang-ai/Mi-Ripple"

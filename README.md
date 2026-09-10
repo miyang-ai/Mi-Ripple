@@ -1,11 +1,11 @@
-# MIRAGE
+# Mi-Ripple
 
 ## AI Skill — start here
 
-**[Open `skills/mirage/SKILL.md` →](https://github.com/miyang-ai/Mi-Ripple/blob/main/skills/mirage/SKILL.md)**
+**[Open `skills/mi-ripple/SKILL.md` →](https://github.com/miyang-ai/Mi-Ripple/blob/main/skills/mi-ripple/SKILL.md)**
 
 AI coding agents should read this skill first. It contains the complete workflow
-for installing MIRAGE, processing an image, inspecting the generated evidence,
+for installing Mi-Ripple, processing an image, inspecting the generated evidence,
 requesting permission before paid regeneration, and returning the actual result.
 The skill never authorizes paid regeneration on the user's behalf.
 
@@ -18,20 +18,20 @@ https://github.com/miyang-ai/Mi-Ripple
 Direct skill URL:
 
 ```text
-https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/skills/mirage/SKILL.md
+https://raw.githubusercontent.com/miyang-ai/Mi-Ripple/main/skills/mi-ripple/SKILL.md
 ```
 
-Reference implementation of **MIRAGE**, MIYANG's diagnosis-guided workflow for
+Reference implementation of **Mi-Ripple**, MIYANG's diagnosis-guided workflow for
 restoring grid-like and scale-like artifacts introduced by iterative,
 reference-conditioned AI image editing.
 
-[Try MIRAGE on the MIYANG Lab website →](https://lab.miyang.cn/ripple/)
+[Try Mi-Ripple on the MIYANG Lab website →](https://lab.miyang.cn/ripple/)
 
-[Experience MIRAGE with Alice →](https://alice.miyang.cn/)
+[Experience Mi-Ripple with Alice →](https://alice.miyang.cn/)
 
 [Visit the MIYANG official website →](https://miyang.cn/)
 
-MIRAGE does not apply one aggressive filter to every image. It first separates:
+Mi-Ripple does not apply one aggressive filter to every image. It first separates:
 
 - **Periodic lattice artifacts**: isolated spectral peaks that can be selectively
   notched with low measured distortion.
@@ -93,7 +93,7 @@ Python 3.11 or newer is required.
 
 ```bash
 git clone https://github.com/miyang-ai/Mi-Ripple.git
-cd mirage
+cd Mi-Ripple
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
@@ -117,7 +117,7 @@ pytest
 Local deterministic processing is the default:
 
 ```bash
-mirage input.png output/
+mi-ripple input.png output/
 ```
 
 The output directory contains:
@@ -134,7 +134,7 @@ MIYANG API key:
 
 ```bash
 export MIYANG_API_KEY=...
-mirage input.png output/ --allow-regen --max-regen 1
+mi-ripple input.png output/ --allow-regen --max-regen 1
 ```
 
 Regeneration may change image content, dimensions, and color. Its output remains
@@ -145,7 +145,7 @@ a candidate until a person accepts it.
 ```python
 from pathlib import Path
 
-from mirage.pipeline import run
+from mi_ripple.pipeline import run
 
 result = run(Path("input.png"), Path("output"))
 print(result["outcome"], result["final"])
@@ -153,18 +153,18 @@ print(result["outcome"], result["final"])
 
 Individual measurement and processing modules are also public:
 
-- `mirage.diagnosis`
-- `mirage.scale_index`
-- `mirage.notch`
-- `mirage.spatial`
-- `mirage.reference`
-- `mirage.verify`
+- `mi_ripple.diagnosis`
+- `mi_ripple.scale_index`
+- `mi_ripple.notch`
+- `mi_ripple.spatial`
+- `mi_ripple.reference`
+- `mi_ripple.verify`
 
 ## Method and evidence
 
 The accompanying paper is:
 
-> Yicheng Xu, Jiayin Chen, and Muting Wang. **MIRAGE: Restoring Images
+> Yicheng Xu, Jiayin Chen, and Muting Wang. **Mi-Ripple: Restoring Images
 > Degraded by Iterative AI Editing.** MIYANG Technology (Shanghai) Co., Ltd.,
 > 2026.
 

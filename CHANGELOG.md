@@ -4,7 +4,7 @@ All notable changes to this project will be documented here.
 
 ## 0.1.0 - 2026-09-10
 
-- Published the standalone MIRAGE Python package.
+- Published the standalone Mi-Ripple Python package.
 - Added periodic-lattice diagnosis and selective notching.
 - Added flat-region granule diagnosis and structure-aware suppression.
 - Added whole-frame scale indexing and inspection heat maps.

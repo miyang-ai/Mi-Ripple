@@ -30,7 +30,7 @@ DEFAULT_PARAMS = {
 
 
 def default_workers() -> int:
-    value = os.environ.get("MIRAGE_WORKERS", "").strip()
+    value = os.environ.get("MI_RIPPLE_WORKERS", "").strip()
     if value.isdigit() and int(value) > 0:
         return int(value)
     return max(1, min(8, os.cpu_count() or 1))

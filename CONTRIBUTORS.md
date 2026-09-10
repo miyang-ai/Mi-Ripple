@@ -1,6 +1,6 @@
 # Contributors
 
-MIRAGE's research, algorithm, implementation, and publication work is credited
+Mi-Ripple's research, algorithm, implementation, and publication work is credited
 to its project contributors:
 
 - [cnJane](https://github.com/cnJane) — 2583041253@qq.com

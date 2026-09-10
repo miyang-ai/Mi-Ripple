@@ -1,4 +1,4 @@
-"""MIRAGE digital-ripple diagnosis and restoration."""
+"""Mi-Ripple digital-ripple diagnosis and restoration."""
 
 from .diagnosis import diagnose
 from .notch import notch_image

@@ -1,6 +1,6 @@
-# MIRAGE algorithm
+# Mi-Ripple algorithm
 
-MIRAGE is a diagnosis-guided restoration workflow for structured artifacts that
+Mi-Ripple is a diagnosis-guided restoration workflow for structured artifacts that
 can accumulate during iterative, reference-conditioned AI image editing. The
 implementation measures in CIELAB lightness unless a module states otherwise.
 
@@ -9,7 +9,7 @@ implementation measures in CIELAB lightness unless a module states otherwise.
 ### Periodic lattice
 
 A periodic lattice appears as small isolated peaks in the two-dimensional
-spectrum. MIRAGE compares log FFT amplitude with a local two-dimensional median
+spectrum. Mi-Ripple compares log FFT amplitude with a local two-dimensional median
 baseline, keeps only small connected components above that baseline, and
 attenuates those components with a feathered mask while preserving phase.
 
@@ -26,7 +26,7 @@ signals indicate weak structure.
 
 In hair, foliage, fabric, stone, and similar regions, visible artifacts can
 overlap legitimate content in frequency, direction, and scale. No filter can
-separate them without potentially removing real detail. MIRAGE therefore
+separate them without potentially removing real detail. Mi-Ripple therefore
 requests human review or, when explicitly authorized, creates a
 `reference_only` cleaned image for one bounded regeneration attempt.
 
@@ -49,7 +49,7 @@ to a notch-only candidate.
 
 ## Default calibration
 
-The default thresholds reproduce the measurements used in the MIRAGE paper.
+The default thresholds reproduce the measurements used in the Mi-Ripple paper.
 They were calibrated on limited samples and are not universal classifier
 thresholds.
 

@@ -1,4 +1,4 @@
-"""Deterministic diagnosis-guided MIRAGE restoration pipeline."""
+"""Deterministic diagnosis-guided Mi-Ripple restoration pipeline."""
 
 from __future__ import annotations
 

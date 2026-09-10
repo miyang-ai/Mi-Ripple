@@ -12,26 +12,26 @@
 \usepackage{microtype}
 \setlength{\emergencystretch}{2em}
 \graphicspath{{figures/}{./}}
-\newcommand{\method}{MIRAGE}
+\newcommand{\method}{Mi-Ripple}
 \newcommand{\sd}{\operatorname{SD}}
 \newcommand{\cv}{\operatorname{CV}}
 \newif\ifincludeappendix
 \includeappendixtrue % Set false when the venue requires a main-text-only PDF.
 
 \begin{document}
-\title[MIRAGE: Restoring Images Degraded by Iterative AI Editing]{MIRAGE: Restoring Images Degraded by Iterative AI Editing}
+\title[Mi-Ripple: Restoring Images Degraded by Iterative AI Editing]{Mi-Ripple: Restoring Images Degraded by Iterative AI Editing}
 \author{Jiayin Chen\textsuperscript{2,1,3,4}, Yicheng Xu\textsuperscript{1,5}, Muting Wang\textsuperscript{1,6}}
-\affiliation{\institution{\textsuperscript{1} Miyang Technology (Shanghai) Co., Ltd., Shanghai, China; \textsuperscript{2} Key Laboratory of System Software (Chinese Academy of Sciences), Beijing, China; \textsuperscript{3} Institute of Software, Chinese Academy of Sciences, Beijing, China; \textsuperscript{4} University of Chinese Academy of Sciences, Beijing, China; \textsuperscript{5} Shanghai Jiao Tong University, Shanghai, China; \textsuperscript{6} Tianjin University, Tianjin, China}}
+\affiliation{\institution{\textsuperscript{1} Miyang Technology (Shanghai) Co., Ltd., Shanghai, China; \textsuperscript{2} Key Laboratory of System Software (Chinese Academy of Sciences), Beijing, China; \textsuperscript{3} Institute of Software, Chinese Academy of Sciences, Beijing, China; \textsuperscript{4} University of Chinese Academy of Sciences, Beijing, China; \textsuperscript{5} Shanghai Jiao Tong University, Shanghai, China; \textsuperscript{6} Tianjin University, Tianjin, China}\country{China}}
 
 \begin{abstract}
 Iterative reference-conditioned image editing can introduce grid-like and granular textures, commonly described as digital ripple.
-We present MIRAGE, a diagnosis-guided restoration workflow that suppresses this digital ripple while protecting image structure. 
-MIRAGE separates periodic lattice artifacts from content-entangled granular texture, then combines selective spectral notching, 
+We present Mi-Ripple, a diagnosis-guided restoration workflow that suppresses this digital ripple while protecting image structure. 
+Mi-Ripple separates periodic lattice artifacts from content-entangled granular texture, then combines selective spectral notching, 
 structure-aware smoothing, and cleaned-reference regeneration. 
 This separation enables low-distortion filtering when artifacts are spectrally isolated and visual reconstruction when filtering would erase legitimate detail. 
 Across fourteen notch-only executions, whole-image residual standard deviation is 0.08--0.44 in CIELAB lightness units. 
 In a paired regeneration example, reference cleaning reduces output debris density by 45\%. 
-MIRAGE links measurable artifact reduction to visibly cleaner generated images, rather than optimizing a spectral score alone.
+Mi-Ripple links measurable artifact reduction to visibly cleaner generated images, rather than optimizing a spectral score alone.
 \end{abstract}
 \keywords{image restoration, iterative reference-conditioned image editing, structure-aware filtering}
 \begin{teaserfigure}
@@ -135,8 +135,8 @@ The restoration examples show how treatment selection addresses visible grain, f
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{./figures/restoration_en.pdf}
-\caption{GPT-image-2.5 gen4 face close-up and the MIRAGE output. The comparison illustrates the visual change after reference cleaning, regeneration and final notching.}
-\Description{Two native 1280 by 720 face close-up images are stacked vertically. The top is a GPT-image-2.5 gen4 input and the bottom is the MIRAGE output after processing. No separate enlarged crop is shown.}
+\caption{GPT-image-2.5 gen4 face close-up and the Mi-Ripple output. The comparison illustrates the visual change after reference cleaning, regeneration and final notching.}
+\Description{Two native 1280 by 720 face close-up images are stacked vertically. The top is a GPT-image-2.5 gen4 input and the bottom is the Mi-Ripple output after processing. No separate enlarged crop is shown.}
 \label{fig:restoration}
 \end{figure}
 
@@ -227,7 +227,7 @@ The workflow restores images through three linked decisions: diagnose the artifa
 Channel B is operated by the authors' institution. The experiments concern artifact measurements rather than overall channel rankings. Generated outputs remain identified as AI-generated; filtering is intended for quality control on the authors' assets, not concealment of provenance. Third-party material retains its original attribution and license.
 
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{references.bib}
+\bibliography{sigplan_refs}
 
 \ifincludeappendix
 \clearpage
@@ -427,7 +427,7 @@ For rejection sampling, one of four initial moss draws falls below 2\%, and none
 \subsection{Six-Original Case Series}
 The six watercolour originals depict the same character at $1011\times638$. Each supplies one initial channel-A candidate at $1536\times1024$ and one hair-constrained channel-B candidate at the same resolution. Table~\ref{tab:cases} reports aligned processing results. The two candidate sets are different generations; neither their pixels nor their content should be directly differenced across sets.
 
-\begin{table*}[t]
+\begin{table*}[h!]
 \caption{Whole-image distortion after pipeline processing. Initial candidates use channel A; constrained candidates use channel B. Both sets are $1536\times1024$. SD is in $L^*$ units; retention is the high-pass SD ratio.}
 \label{tab:cases}
 \centering\small

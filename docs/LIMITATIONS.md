@@ -1,6 +1,6 @@
 # Limitations and responsible use
 
-Read this document before interpreting MIRAGE scores or accepting an output.
+Read this document before interpreting Mi-Ripple scores or accepting an output.
 
 ## The detector is not universal
 
@@ -53,6 +53,6 @@ release.
 
 ## Provenance
 
-MIRAGE is intended for quality control, not for hiding that an image was
+Mi-Ripple is intended for quality control, not for hiding that an image was
 AI-generated. Processing records should remain attached to distributed outputs
 when provenance matters.

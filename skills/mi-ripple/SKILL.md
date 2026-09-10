@@ -1,5 +1,5 @@
 ---
-name: mirage
+name: mi-ripple
 description: Diagnose and restore grid-like, granular, scale-like, tiled, or ripple artifacts in AI-generated images. Use when a user asks to remove digital ripple, decoder grids, repeating scales, honeycomb texture, granular AI texture, or degradation caused by iterative image-to-image editing.
 license: MIT
 compatibility: Requires Python 3.11+, local file access, and permission to run shell commands. Network access and a MIYANG API key are optional and only needed for explicitly authorized regeneration.
@@ -11,7 +11,7 @@ metadata:
 
 # Restore digital-ripple artifacts
 
-Use the MIYANG `mirage` package to diagnose first, choose only a compatible
+Use the MIYANG `mi_ripple` package to diagnose first, choose only a compatible
 treatment, inspect the visual evidence, and return the actual output files to the
 user.
 
@@ -43,7 +43,7 @@ Do not treat this as a generic denoiser. The workflow distinguishes:
 First check whether the command is available:
 
 ```bash
-mirage --help
+mi-ripple --help
 ```
 
 If this skill is being used from a checkout of the repository, install that
@@ -57,12 +57,12 @@ python3 -m venv .venv
 Otherwise install from the canonical repository into an isolated environment:
 
 ```bash
-python3 -m venv .mirage-venv
-.mirage-venv/bin/python -m pip install \
+python3 -m venv .mi-ripple-venv
+.mi-ripple-venv/bin/python -m pip install \
   "git+https://github.com/miyang-ai/Mi-Ripple.git"
 ```
 
-Use the corresponding environment's `mirage` executable for subsequent steps.
+Use the corresponding environment's `mi-ripple` executable for subsequent steps.
 Do not modify the user's global Python environment.
 
 ## Inputs
@@ -83,7 +83,7 @@ final files.
 ## Step 1: run the local pipeline
 
 ```bash
-mirage "/absolute/path/input.png" "/absolute/path/output"
+mi-ripple "/absolute/path/input.png" "/absolute/path/output"
 ```
 
 This performs diagnosis, deterministic routing, safe local treatment when
@@ -160,7 +160,7 @@ test -n "$MIYANG_API_KEY"
 Run one bounded attempt by default:
 
 ```bash
-mirage "/absolute/path/input.png" "/absolute/path/output-regenerated" \
+mi-ripple "/absolute/path/input.png" "/absolute/path/output-regenerated" \
   --allow-regen --max-regen 1
 ```
 

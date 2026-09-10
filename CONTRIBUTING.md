@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for improving MIRAGE.
+Thank you for improving Mi-Ripple.
 
 ## Development
 

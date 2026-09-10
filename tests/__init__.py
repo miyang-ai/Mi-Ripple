@@ -1,1 +1,1 @@
-"""Public MIRAGE test suite."""
+"""Public Mi-Ripple test suite."""

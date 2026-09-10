@@ -15,7 +15,7 @@ report. Use synthetic inputs where possible.
 
 ## Untrusted images
 
-Applications exposing MIRAGE to untrusted uploads must enforce file-size,
+Applications exposing Mi-Ripple to untrusted uploads must enforce file-size,
 pixel-count, format, timeout, memory, and concurrency limits before invoking the
 library. The command-line research implementation does not provide a hardened
 upload service.

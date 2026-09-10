@@ -9,15 +9,15 @@ import pytest
 from PIL import Image
 from scipy import ndimage
 
-from mirage import pipeline
-from mirage.common import rgb_to_L, window_damage
-from mirage.diagnosis import diagnose, flag_granule, window_features
-from mirage.notch import find_isolated_peaks, median_baseline, notch_image
-from mirage.regeneration import build_prompt, regenerate, request_size
-from mirage.scale_index import scale_index
-from mirage.scale_index import serializable as scale_serializable
-from mirage.spatial import iso_clean
-from mirage.verify import verify
+from mi_ripple import pipeline
+from mi_ripple.common import rgb_to_L, window_damage
+from mi_ripple.diagnosis import diagnose, flag_granule, window_features
+from mi_ripple.notch import find_isolated_peaks, median_baseline, notch_image
+from mi_ripple.regeneration import build_prompt, regenerate, request_size
+from mi_ripple.scale_index import scale_index
+from mi_ripple.scale_index import serializable as scale_serializable
+from mi_ripple.spatial import iso_clean
+from mi_ripple.verify import verify
 from tests.synthetic import (
     HEIGHT,
     WIDTH,
