@@ -38,14 +38,11 @@ PARAMS = {
 }
 
 
-def detect_faces(
+def _haar_cascade_boxes(
+    cv2,
     rgb: np.ndarray,
-) -> tuple[list[tuple[int, int, int, int]], str]:
-    """Detect optional face-protection boxes using OpenCV Haar cascades."""
-    try:
-        import cv2
-    except ImportError:
-        return [], "cv2_unavailable"
+) -> list[tuple[int, int, int, int]]:
+    """Run the Haar cascades; raises if OpenCV or its cascade data is unusable."""
     gray = cv2.cvtColor(
         (rgb * 255).astype(np.uint8),
         cv2.COLOR_RGB2GRAY,
@@ -59,10 +56,12 @@ def detect_faces(
         "haarcascade_frontalface_alt2.xml",
         "haarcascade_profileface.xml",
     )
+    loaded = 0
     for name in cascade_names:
         cascade = cv2.CascadeClassifier(cv2.data.haarcascades + name)
         if cascade.empty():
             continue
+        loaded += 1
         flips = (False, True) if "profile" in name else (False,)
         for flip in flips:
             input_gray = cv2.flip(gray, 1) if flip else gray
@@ -83,6 +82,31 @@ def detect_faces(
                         int(y + box_height),
                     )
                 )
+    if not loaded:
+        raise FileNotFoundError("no OpenCV Haar cascade could be loaded")
+    return boxes
+
+
+def detect_faces(
+    rgb: np.ndarray,
+) -> tuple[list[tuple[int, int, int, int]], str]:
+    """Detect optional face-protection boxes using OpenCV Haar cascades.
+
+    Face protection is best-effort. Without OpenCV the status is
+    ``cv2_unavailable``; an OpenCV that is present but unusable (failed
+    import, missing API or cascade data, runtime error) gives no boxes and
+    ``cv2_error:<exception type>`` instead of failing the caller.
+    """
+    try:
+        import cv2
+    except Exception as error:
+        if isinstance(error, ModuleNotFoundError) and error.name == "cv2":
+            return [], "cv2_unavailable"
+        return [], f"cv2_error:{type(error).__name__}"
+    try:
+        boxes = _haar_cascade_boxes(cv2, rgb)
+    except Exception as error:
+        return [], f"cv2_error:{type(error).__name__}"
     merged: list[tuple[int, int, int, int]] = []
     boxes.sort(
         key=lambda box: (box[2] - box[0]) * (box[3] - box[1]),
